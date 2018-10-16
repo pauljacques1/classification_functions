@@ -5,8 +5,8 @@ from sklearn.metrics import roc_curve, auc,precision_recall_curve, confusion_mat
 
 def feature (df):
     y_ = df.profitable.values
-    x_ = df.dropna('profitable').values
-    x_names = df.dropna('profitable').columns
+    x_ = df.drop('profitable', axis = 1).values
+    x_names = df.drop('profitable', axis = 1).columns
 
     return x_, x_names, y_
 
